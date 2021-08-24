@@ -113,9 +113,16 @@ public class Recipe {
     public Notes getNotes() {
         return notes;
     }
-
+    //handling entity relation 1-* and *-1
     public void setNotes(Notes notes) {
         this.notes = notes;
+        notes.setRecipe(this);
+    }
+        // handling bi directional relation
+    public Recipe addIngredient(Ingredient ingredient){
+        ingredient.setRecipe(this);
+        this.ingredients.add(ingredient);
+        return this;
     }
 
     public Difficulty getDifficulty() {
