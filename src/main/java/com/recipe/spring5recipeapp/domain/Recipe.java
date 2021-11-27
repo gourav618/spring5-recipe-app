@@ -43,8 +43,10 @@ public class Recipe {
 
     //handling entity relation 1-* and *-1
     public void setNotes(Notes notes) {
-        this.notes = notes;
-        notes.setRecipe(this);
+        if (notes != null){
+            this.notes = notes;
+            notes.setRecipe(this);
+        }
     }
         // handling bi directional relation
     public Recipe addIngredient(Ingredient ingredient){
