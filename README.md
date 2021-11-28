@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/gourav618/spring5-recipe-app/tree/main.svg?style=svg)](https://circleci.com/gh/gourav618/spring5-recipe-app/tree/main)
 
 # spring5-recipe-app
-A recipe application built using Spring-Boot where one can create/update and view recipe with all the details.
+A recipe application built using Spring-Boot where one can create/update, view and delete recipe with all the details.
 
 sample home page
 ![image](https://user-images.githubusercontent.com/18540751/143776175-de9d83ee-ea5f-402a-8c1c-38baa0ff7ae8.png)
