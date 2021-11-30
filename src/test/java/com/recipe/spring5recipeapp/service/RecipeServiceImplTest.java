@@ -13,7 +13,6 @@ import org.mockito.MockitoAnnotations;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
-import java.util.function.Supplier;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -71,7 +70,7 @@ class RecipeServiceImplTest {
     }
 
     @Test
-    public void getRecipeCoomandByIdTest() throws Exception {
+    public void getRecipeCoomandByIdTest(){
         Recipe recipe = new Recipe();
         recipe.setId(1L);
         Optional<Recipe> recipeOptional = Optional.of(recipe);
@@ -88,5 +87,17 @@ class RecipeServiceImplTest {
         assertNotNull(commandById);
         verify(recipeRepository, times(1)).findById(anyLong());
         verify(recipeRepository, never()).findAll();
+    }
+
+    @Test
+    void testDeleteById(){
+        //given
+        Long idToDelete = Long.valueOf(2L);
+        //when
+        recipeService.deleteById(idToDelete);
+
+        //no , when since method has no return type
+        //then
+        verify(recipeRepository, times(1)).deleteById(anyLong());
     }
 }
