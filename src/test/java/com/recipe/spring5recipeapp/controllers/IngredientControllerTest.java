@@ -18,6 +18,7 @@ import java.util.HashSet;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 public class IngredientControllerTest {
@@ -102,7 +103,7 @@ public class IngredientControllerTest {
         when(ingredientService.saveIngredientCommand(any())).thenReturn(command);
 
         //then
-        mockMvc.perform(get("/recipe/2/ingredient")
+        mockMvc.perform(post("/recipe/2/ingredient")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .param("id","")
                 .param("description", "some description"))
