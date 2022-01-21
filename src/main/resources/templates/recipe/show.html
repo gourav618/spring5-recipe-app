@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-md-6">
                                 <img src="../../static/images/panda.jpg"
-                                     th:src="@{/images/panda.jpg}"
+                                     th:src="@{'/recipe/' + ${recipe.id} + '/recipeimage'}"
                                      width="200" height="200">
                             </div>
                         </div>
